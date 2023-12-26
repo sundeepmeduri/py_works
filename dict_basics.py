@@ -86,8 +86,9 @@ for key, val in mydict.items():
 
 print(mydict1)
 del mydict1['model']
-print(mydict1)
-print(mydict)
+mydict1.pop('milage')
+print('1', mydict1)
+print('0', mydict)
 
 mydict1.clear()
 print(mydict1)
@@ -98,6 +99,68 @@ del mydict1['model']
 print('mydict1', mydict1)
 print('mydict', mydict)
 
-mydict2 = dict(mydict)
+mydict2 = dict(mydict)  # another way to copy dict
 print('mydic2', mydict2)
 print('mydict', mydict)
+
+print('\n----nested dict-------------')
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily)
+
+for mem in myfamily:
+    print('-----', mem)
+    curr_mem = myfamily[mem]
+    for key, val in curr_mem.items():
+        print(key, val)
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfam = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+print('\n---------')
+for key in myfam:
+    print(key)
+    curr_mem = myfam[key]
+    for k, val in curr_mem.items():
+        print(k, val)
+
+'''
+clear()	Removes all the elements from the dictionary
+copy()	Returns a copy of the dictionary
+fromkeys()	Returns a dictionary with the specified keys and value
+get()	Returns the value of the specified key
+items()	Returns a list containing a tuple for each key value pair
+keys()	Returns a list containing the dictionary's keys
+pop()	Removes the element with the specified key
+popitem()	Removes the last inserted key-value pair
+setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	Updates the dictionary with the specified key-value pairs
+values()	Returns a list of all the values in the dictionary
+'''
