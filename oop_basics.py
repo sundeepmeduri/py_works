@@ -18,6 +18,8 @@ class Car:
         print('Car make is {0}, model is {1} and manufactured in year {2} and has {3} seats'.format(self.make, self.model, self.year, self.seats))
 
 
+
+###########################################################################
 # my_car = Car('honda', 'crv')  # we can create either way
 my_car = Car(make='honda', model='crv', year=2018, is_hybrid=False)  # object is created
 # print(type(my_car))
@@ -29,8 +31,10 @@ print(is_hybrid)
 print(my_car.seats)
 my_car.desc()
 
+
 print('\n--- car 2')
 my_car2 = Car(year=2020, make='range rover', model='sport', is_hybrid=True)  # object is created
+my_car2.seats = 6
 # print(type(my_car))
 print(my_car2.make)
 print(my_car2.model)
@@ -39,3 +43,5 @@ is_hybrid = 'Yes' if my_car2.is_hybrid is True else 'No'
 print(is_hybrid)
 print(my_car2.seats)
 my_car2.desc()
+#################################################################################
+
