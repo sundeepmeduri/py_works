@@ -18,7 +18,6 @@ class Car:
         print('Car make is {0}, model is {1} and manufactured in year {2} and has {3} seats'.format(self.make, self.model, self.year, self.seats))
 
 
-
 ###########################################################################
 # my_car = Car('honda', 'crv')  # we can create either way
 my_car = Car(make='honda', model='crv', year=2018, is_hybrid=False)  # object is created
