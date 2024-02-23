@@ -1,0 +1,24 @@
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Create a pandas DataFrame (replace this with your actual DataFrame)
+data = {
+    'id': [1, 2, 3],
+    'name': ['Alice', 'Bob', 'Charlie'],
+    'age': [30, 35, 40]
+}
+df = pd.DataFrame(data)
+
+# Set up the connection string
+server = 'your_server_name'
+database = 'your_database_name'
+username = 'your_username'
+password = 'your_password'
+driver = 'ODBC+Driver+17+for+SQL+Server'
+conn_str = f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}'
+
+# Create the SQLAlchemy engine
+engine = create_engine(conn_str)
+
+# Load the DataFrame into the SQL Server database
+df.to_sql('your_table_name', con=engine, if_exists='replace', index=False)
